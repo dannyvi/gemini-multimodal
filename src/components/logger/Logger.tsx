@@ -20,8 +20,8 @@ import { Part } from "@google/generative-ai";
 import cn from "classnames";
 import { ReactNode } from "react";
 import { useLoggerStore } from "../../lib/store-logger";
-import SyntaxHighlighter from "react-syntax-highlighter";
 import { vs2015 as dark } from "react-syntax-highlighter/dist/esm/styles/hljs";
+
 import {
   ClientContentMessage,
   isClientContentMessage,
@@ -39,6 +39,8 @@ import {
   ToolCallMessage,
   ToolResponseMessage,
 } from "../../multimodal-live-types";
+import { Prism, SyntaxHighlighterProps } from "react-syntax-highlighter";
+const SyntaxHighlighter = (Prism as any) as React.FC<SyntaxHighlighterProps>;
 
 const formatTime = (d: Date) => d.toLocaleTimeString().slice(0, -3);
 
